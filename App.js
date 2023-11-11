@@ -7,7 +7,7 @@ export default function App() {
 const [todo, setTodo] = useState([])
  function tasks(){
   return {
-    id: Date().now,
+    id: Date.now(),
     todoText: formData,
     isCompleted: false
   }
@@ -20,8 +20,10 @@ const [todo, setTodo] = useState([])
   console.log(todo[1]?.todoText)
  }
  const mytodo = todo.map((singletodo)=>{
-  return (<View>
-<Text keyExtractor={(singletodo) => singletodo.id}>{singletodo.todoText}</Text>
+  return (<View keyExtractor={(singletodo) => singletodo.id}>
+<Text >{singletodo.todoText}</Text>
+<Text >{singletodo.id}</Text>
+
   </View>
   )
  })
